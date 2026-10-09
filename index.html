@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L&E Beauty | Maquillaje de Marcas Reconocidas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff8fa;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #fce4ec, #f8e8eb);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            max-width: 280px;
+            margin: 0 auto 15px;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ad4b70;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #886775;
+        }
+
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(173, 75, 112, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px 25px;
+            color: #ad4b70;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #fce4ec;
+            color: #8a3a59;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #ad4b70;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '✿';
+            display: block;
+            font-size: 1.2rem;
+            color: #d89ab4;
+            margin-top: 8px;
+        }
+
+        .product-category {
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: #8a3a59;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f3d7e2;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(173, 75, 112, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(173, 75, 112, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            background-color: #fef4f8;
+        }
+
+        .product-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #5c2c42;
+            margin-bottom: 8px;
+        }
+
+        .product-shade {
+            font-size: 0.9rem;
+            color: #7a5566;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ad4b70;
+        }
+
+        .about-section {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(173, 75, 112, 0.08);
+        }
+
+        .about-section h3 {
+            color: #ad4b70;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-info {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(173, 75, 112, 0.08);
+        }
+
+        .contact-info h3 {
+            color: #ad4b70;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .contact-info a {
+            color: #ad4b70;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #f8e8eb;
+            text-align: center;
+            padding: 25px;
+            color: #886775;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con Logo -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="L&E">
+        </div>
+        <h1>L&E Beauty</h1>
+        <p>Maquillaje de Marcas Reconocidas ✨ Productos 100% Originales</p>
+    </header>
+
+    <!-- Menú de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Sección de Productos -->
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+
+            <!-- e.l.f. Glow Reviver Lip Oil -->
+            <div class="product-category">
+                <h3 class="category-title">✨ e.l.f. Glow Reviver Lip Oil — Aceite Labial</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="pink-quartz.png" class="product-image" alt="E&L">
+                        <h4 class="product-name">Glow Reviver Lip Oil</h4>
+                        <p class="product-shade">🌸 Pink Quartz — Rosa claro</p>
+                        <p class="product-price">$200 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="rose-envy.png" class="product-image" alt="E&L">
+                        <h4 class="product-name">Glow Reviver Lip Oil</h4>
+                        <p class="product-shade">🌹 Rose Envy — Rosa suave</p>
+                        <p class="product-price">$200 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="red-delicious.png" class="product-image" alt="E&L">
+                        <h4 class="product-name">Glow Reviver Lip Oil</h4>
+                        <p class="product-shade">🍎 Red Delicious — Rojo brillante</p>
+                        <p class="product-price">$200 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="coral-fixation.png" class="product-image" alt="E&L">
+                        <h4 class="product-name">Glow Reviver Lip Oil</h4>
+                        <p class="product-shade">🧡 Coral Fixation — Coral cálido</p>
+                        <p class="product-price">$200 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="jam-session.png" class="product-image" alt="E&L">
+                        <h4 class="product-name">Glow Reviver Lip Oil</h4>
+                        <p class="product-shade">🍷 Jam Session — Ciruela oscura</p>
+                        <p class="product-price">$200 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="honey-talks.png" class="product-image" alt="E&L">
+                        <h4 class="product-name">Glow Reviver Lip Oil</h4>
+                        <p class="product-shade">🍯 Honey Talks — Beige nude</p>
+                        <p class="product-price">$200 MXN</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rhode Peptide Lip Tint -->
+            <div class="product-category">
+                <h3 class="category-title">🎀 Rhode Peptide Lip Tint — Brillo con Color</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="ribbon.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Peptide Lip Tint</h4>
+                        <p class="product-shade">🎀 Ribbon — Rosa transparente</p>
+                        <p class="product-price">$299 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="jelly-bean.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Peptide Lip Tint</h4>
+                        <p class="product-shade">🫧 Jelly Bean — Rosa con brillo</p>
+                        <p class="product-price">$299 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="toast.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Peptide Lip Tint</h4>
+                        <p class="product-shade">🤎 Toast — Rose Taupe</p>
+                        <p class="product-price">$299 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="raspberry.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Peptide Lip Tint</h4>
+                        <p class="product-shade">🍓 Raspberry Jelly — Frambuesa</p>
+                        <p class="product-price">$299 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="rhode-pbj.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Peptide Lip Tint</h4>
+                        <p class="product-shade">🫐 PBJ — Marrón frutal</p>
+                        <p class="product-price">$299 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="espresso.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Peptide Lip Tint</h4>
+                        <p class="product-shade">☕ Espresso — Marrón profundo</p>
+                        <p class="product-price">$299 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="pretzel.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Peptide Lip Tint</h4>
+                        <p class="product-shade">🌰 Pretzel — Mauve cálido</p>
+                        <p class="product-price">$299 MXN</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- e.l.f. Sheer For It Blush Tint -->
+            <div class="product-category">
+                <h3 class="category-title">💖 e.l.f. Sheer For It Blush Tint — Tinte Labial y Mejillas</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="left-on-red.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Sheer For It Blush Tint</h4>
+                        <p class="product-shade">❤️ Left On Red — Rojo</p>
+                        <p class="product-price">$175 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="orange-crush.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Sheer For It Blush Tint</h4>
+                        <p class="product-shade">🍊 Orange Crush — Naranja</p>
+                        <p class="product-price">$175 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="pink-positive.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Sheer For It Blush Tint</h4>
+                        <p class="product-shade">💖 Pink Positive — Rosa</p>
+                        <p class="product-price">$175 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="plums-up.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Sheer For It Blush Tint</h4>
+                        <p class="product-shade">🍇 Plums Up — Ciruela</p>
+                        <p class="product-price">$175 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="cherry-cola.png" class="product-image" alt="L&E">
+                        <h4 class="product-name">Sheer For It Blush Tint</h4>
+                        <p class="product-shade">🍒 Cherry Cola — Cereza</p>
+                        <p class="product-price">$175 MXN</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NYX Fat Oil Lip Drip -->
+            <div class="product-category">
+                <h3 class="category-title">💧 NYX Fat Oil Lip Drip — Aceite Labial</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="clear.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Fat Oil Lip Drip</h4>
+                        <p class="product-shade">✨ Clear — Transparente</p>
+                        <p class="product-price">$220 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="pink.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Fat Oil Lip Drip</h4>
+                        <p class="product-shade">💖 Pink — Rosa brillante</p>
+                        <p class="product-price">$220 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="purple.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Fat Oil Lip Drip</h4>
+                        <p class="product-shade">🫐 Berry — Ciruela</p>
+                        <p class="product-price">$220 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="nude.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Fat Oil Lip Drip</h4>
+                        <p class="product-shade">🤎 Nude — Marrón claro</p>
+                        <p class="product-price">$220 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="rose.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Fat Oil Lip Drip</h4>
+                        <p class="product-shade">🌹 Rose — Rosa profundo</p>
+                        <p class="product-price">$220 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="cherry.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Fat Oil Lip Drip</h4>
+                        <p class="product-shade">🍒 Cherry — Cereza oscura</p>
+                        <p class="product-price">$220 MXN</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- e.l.f. Glow Reviver Melting Lip Balm -->
+            <div class="product-category">
+                <h3 class="category-title">💫 e.l.f. Glow Reviver Melting Lip Balm</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="wild-cherry.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Glow Reviver Lip Balm</h4>
+                        <p class="product-shade">🍒 Wild Cherry — Rojo cereza</p>
+                        <p class="product-price">$215 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="vanilla-toffee.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Glow Reviver Lip Balm</h4>
+                        <p class="product-shade">🍦 Vanilla Toffee — Nude cálido</p>
+                        <p class="product-price">$215 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="strawberry-shortcake.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Glow Reviver Lip Balm</h4>
+                        <p class="product-shade">🍓 Strawberry Shortcake — Rosa melocotón</p>
+                        <p class="product-price">$215 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="yummy-gummy.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Glow Reviver Lip Balm</h4>
+                        <p class="product-shade">🍬 Yummy Gummy — Ciruela suave</p>
+                        <p class="product-price">$215 MXN</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- e.l.f. Squeeze Me Lip Balm -->
+            <div class="product-category">
+                <h3 class="category-title">🍭 e.l.f. Squeeze Me Lip Balm — Bálsamo Labial</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="mango.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Squeeze Me Lip Balm</h4>
+                        <p class="product-shade">🍊 Mango — Naranja</p>
+                        <p class="product-price">$145 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="coconut.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Squeeze Me Lip Balm</h4>
+                        <p class="product-shade">🥥 Coconut — Transparente</p>
+                        <p class="product-price">$145 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="watermelon.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Squeeze Me Lip Balm</h4>
+                        <p class="product-shade">🍉 Watermelon — Rosa</p>
+                        <p class="product-price">$145 MXN</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="lavender.jpg" class="product-image" alt="L&E">
+                        <h4 class="product-name">Squeeze Me Lip Balm</h4>
+                        <p class="product-shade">🍇 Lavender — Morado</p>
+                        <p class="product-price">$145 MXN</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Nosotros -->
+        <section id="nosotros">
+            <h2>Sobre Nosotros</h2>
+            <div class="about-section">
+                <h3>✨ Bienvenida a L&E Beauty</h3>
+                <p>Somos tu tienda de confianza de maquillaje de marcas reconocidas. Todos nuestros productos son 100% originales y cuidamos cada detalle para que tengas la mejor experiencia de compra. Nuestro compromiso es ofrecerte productos de calidad con una gran variedad para que encuentres todo lo que buscas en un solo lugar. 💖</p>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <div class="contact-info">
+                <h3>🛍️ ¿Cómo comprar?</h3>
+                <p>📱 <strong>WhatsApp:</strong> <a href="https://w.app/lebeuty">3320123707</a></p></strong>
+                <p>📱  <strong>WhatsApp:</strong> <a href="https://w.app/lebeuty2">3131073029</a></p></strong>
+                <p>📸 <strong>Instagram:</strong> <a href="https://www.instagram.com/le_beauty.mx?xtok=cHNuZTM3OXkydWcz">@le_beauty.mx</a></p>
+                <p>💬 Escríbenos y con gusto te ayudamos con tu pedido. ¡Gracias por confiar en nosotros! ✨</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2026 L&E Beauty — Maquillaje de Marcas Reconocidas ✨ Productos 100% Originales</p>
+    </footer>
+
+</body>
+</html>
